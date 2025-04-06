@@ -1,0 +1,39 @@
+{
+  "tareas": [
+    {
+      "id": "cac8",
+      "titulo": "Crear repositorio GitLab",
+      "descripcion": "Se debe crear el repositorio",
+      "estado": "pendiente",
+      "fechaLimite": "2025-04-06"
+    },
+    {
+      "id": "bef7",
+      "titulo": "Comunicarse con el cliente",
+      "descripcion": "Se debe llamar al cliente 1020 por whatsApp",
+      "estado": "pendiente",
+      "fechaLimite": "2025-04-15"
+    },
+    {
+      "id": "1384",
+      "titulo": "Realizar entrega de login",
+      "descripcion": "Se debe entregar la página con un logín",
+      "estado": "pendiente",
+      "fechaLimite": "2025-04-16"
+    },
+    {
+      "id": "d52e",
+      "titulo": "Realizar ABM ventas",
+      "descripcion": "Se debe realizar un ABM con todos los requisitos del cliente",
+      "estado": "en_progreso",
+      "fechaLimite": "2025-05-09"
+    },
+    {
+      "id": "ba61",
+      "titulo": "Entrega de ABM con Login",
+      "descripcion": "Se debe realizar la entrega al cliente de ABM con login funcional",
+      "estado": "en_progreso",
+      "fechaLimite": "2025-05-10"
+    }
+  ]
+}
