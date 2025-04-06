@@ -1,19 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CrearTareaModal from "./CrearTareaModal";
+import { useTareas } from "../hooks/useTareas";
+import { ITarea } from "../types/ITareas";
 
 const Backlog = () => {
   const [mostrarModal, setMostrarModal] = useState(false);
-  const [tareas, setTareas] = useState([
-    {
-      titulo: "Tarea 2",
-      descripcion: "Estamos aca...",
-      estado: "pendiente",
-      fechaLimite: "2025-04-10",
-    },
-  ]);
+  const [tareaEditando, setTareaEditando] = useState<ITarea | null>(null);
 
-  const handleNuevaTarea = (tarea: any) => {
-    setTareas((prev) => [...prev, tarea]);
+  const {
+    tareas,
+    cargarTareas,
+    agregarTarea,
+    borrarTareaPorId,
+    modificarTarea,
+  } = useTareas();
+
+  useEffect(() => {
+    cargarTareas();
+  }, []);
+
+  const handleGuardarTarea = async (tarea: ITarea) => {
+    if (tareaEditando) {
+      await modificarTarea(tarea);
+    } else {
+      await agregarTarea(tarea);
+    }
+    setMostrarModal(false);
+    setTareaEditando(null);
   };
 
   return (
@@ -22,20 +35,27 @@ const Backlog = () => {
 
       <button
         className="bg-blue-700 text-white px-3 py-1 rounded mb-4"
-        onClick={() => setMostrarModal(true)}
+        onClick={() => {
+          setTareaEditando(null);
+          setMostrarModal(true);
+        }}
       >
         Crear tarea ➕
       </button>
 
       <CrearTareaModal
         visible={mostrarModal}
-        onClose={() => setMostrarModal(false)}
-        onCrear={handleNuevaTarea}
+        onClose={() => {
+          setMostrarModal(false);
+          setTareaEditando(null);
+        }}
+        onCrear={handleGuardarTarea}
+        tareaEditar={tareaEditando}
       />
 
-      {tareas.map((tarea, index) => (
+      {tareas.map((tarea) => (
         <div
-          key={index}
+          key={tarea.id}
           className="bg-gray-200 p-4 mb-3 rounded flex items-center justify-between"
         >
           <p className="truncate">
@@ -51,8 +71,21 @@ const Backlog = () => {
               <option>Sprint 233</option>
             </select>
             <button className="bg-blue-600 p-1 rounded text-white">👁️</button>
-            <button className="bg-blue-500 p-1 rounded text-white">✏️</button>
-            <button className="bg-red-600 p-1 rounded text-white">🗑️</button>
+            <button
+              className="bg-blue-500 p-1 rounded text-white"
+              onClick={() => {
+                setTareaEditando(tarea);
+                setMostrarModal(true);
+              }}
+            >
+              ✏️
+            </button>
+            <button
+              className="bg-red-600 p-1 rounded text-white"
+              onClick={() => borrarTareaPorId(tarea.id!)}
+            >
+              🗑️
+            </button>
           </div>
         </div>
       ))}

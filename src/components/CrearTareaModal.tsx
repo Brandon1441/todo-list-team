@@ -1,33 +1,53 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { ITarea } from "../types/ITareas";
+import Swal from "sweetalert2";
 
 type CrearTareaModalProps = {
   visible: boolean;
   onClose: () => void;
-  onCrear: (tarea: {
-    titulo: string;
-    descripcion: string;
-    estado: string;
-    fechaLimite: string;
-  }) => void;
+  onCrear: (tarea: ITarea) => void;
+  tareaEditar?: ITarea | null;
 };
 
 const CrearTareaModal: React.FC<CrearTareaModalProps> = ({
   visible,
   onClose,
   onCrear,
+  tareaEditar,
 }) => {
   const [titulo, setTitulo] = React.useState("");
   const [descripcion, setDescripcion] = React.useState("");
   const [estado, setEstado] = React.useState("pendiente");
   const [fechaLimite, setFechaLimite] = React.useState("");
 
-  const handleCrear = () => {
-    if (!titulo || !descripcion || !fechaLimite) return alert("Faltan campos");
-    onCrear({ titulo, descripcion, estado, fechaLimite });
-    setTitulo("");
-    setDescripcion("");
-    setEstado("pendiente");
-    setFechaLimite("");
+
+  useEffect(() => {
+    if (tareaEditar) {
+      setTitulo(tareaEditar.titulo);
+      setDescripcion(tareaEditar.descripcion);
+      setEstado(tareaEditar.estado);
+      setFechaLimite(tareaEditar.fechaLimite?.slice(0, 10) || "");
+    } else {
+      setTitulo("");
+      setDescripcion("");
+      setEstado("pendiente");
+      setFechaLimite("");
+    }
+  }, [tareaEditar, visible]);
+
+  const handleGuardar = () => {
+    if (!titulo || !descripcion || !fechaLimite)
+      return Swal.fire("Atención", "No puede dejar campos vacios", "info");
+
+    const tarea = {
+      ...tareaEditar,
+      titulo,
+      descripcion,
+      estado,
+      fechaLimite,
+    };
+
+    onCrear(tarea);
     onClose();
   };
 
@@ -36,7 +56,9 @@ const CrearTareaModal: React.FC<CrearTareaModalProps> = ({
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white p-6 rounded-md shadow-md w-full max-w-md">
-        <h2 className="text-xl font-semibold mb-4">Crear nueva tarea</h2>
+        <h2 className="text-xl font-semibold mb-4">
+          {tareaEditar ? "Editar tarea" : "Crear nueva tarea"}
+        </h2>
 
         <div className="space-y-3">
           <input
@@ -81,9 +103,9 @@ const CrearTareaModal: React.FC<CrearTareaModalProps> = ({
           </button>
           <button
             className="px-4 py-2 rounded bg-blue-600 text-white"
-            onClick={handleCrear}
+            onClick={handleGuardar}
           >
-            Crear
+            {tareaEditar ? "Guardar cambios" : "Crear"}
           </button>
         </div>
       </div>
