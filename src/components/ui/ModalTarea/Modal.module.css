@@ -1,0 +1,138 @@
+.containerPrincipalModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: brightness(90%) blur(3px);
+  z-index: 1000;
+}
+
+.contentPopUp {
+  background-color: #f0f4f8;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.5rem;
+  border-radius: 15px;
+  border-top: 5px solid #b8d0e6;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.formContent label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.2rem;
+}
+
+.formContent input,
+.formContent textarea {
+  width: 100%;
+  padding: 0.7rem;
+  resize: none;
+  margin: 0.2rem 0 0.8rem;
+  border: 1px solid #b8d0e6;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 0.95rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  color: #333;
+}
+
+.formContent input:focus,
+.formContent textarea:focus {
+  border-color: #8fb9e0;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(143, 185, 224, 0.3);
+}
+
+.buttonCard {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.buttonCard button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.3s;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botón principal */
+.buttonCard button:first-child {
+  background-color: #f77f7f;
+  color: white;
+}
+
+.buttonCard button:first-child:hover {
+  background-color: #d46767;
+  transform: translateY(-2px);
+}
+
+/* Botón secundario */
+.buttonCard button:last-child {
+  background-color: #a3c4f3;
+  color: white;
+}
+
+.buttonCard button:last-child:hover {
+  background-color: #7da8e8;
+  transform: translateY(-2px);
+}
+
+.contentPopUp h2 {
+  color: #5c8a72;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.errorMsg {
+  color: #e26d5c;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0.2rem;
+  margin-bottom: 0.3rem;
+  padding-left: 0.25rem;
+  display: block;
+  word-break: break-word;
+}
+
+.errorMsg::before {
+  content: "⚠ ";
+  font-size: 0.85rem;
+}

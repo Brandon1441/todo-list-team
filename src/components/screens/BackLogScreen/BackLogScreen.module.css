@@ -1,0 +1,21 @@
+.mainContainer {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background: #f2f2f2;
+}
+
+.sideBar {
+  width: 25%;
+  min-width: 250px;
+  box-sizing: border-box;
+  background: #dcebf7;
+}
+
+.listTareas {
+  width: 75%;
+  box-sizing: border-box;
+  background: #ffffff;
+}

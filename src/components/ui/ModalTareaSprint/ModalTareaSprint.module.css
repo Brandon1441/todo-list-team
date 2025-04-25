@@ -1,0 +1,173 @@
+.containerPrincipalModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: brightness(85%) blur(5px);
+    z-index: 100000000;
+}
+
+.contentPopUp {
+    background-color: #F7F9FB;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 40vw;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1.8rem;
+    border-radius: 12px;
+    border-top: 5px solid #D1E8E4;
+    animation: fadeInModal 0.4s ease-out forwards;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.formContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.formContent label {
+    font-weight: 500;
+    color: #4C5C68;
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+
+.formContent input, 
+.formContent textarea {
+    width: 100%;
+    padding: 0.8rem;
+    resize: none;
+    margin: 0.3rem 0 0.8rem;
+    color: #4C5C68;
+    background-color: #FFFFFF;
+    border: 1px solid #D1E8E4;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formContent input:focus, 
+.formContent textarea:focus {
+    outline: none;
+    border-color: #8EC8A9;
+    box-shadow: 0 0 0 3px rgba(142, 200, 169, 0.3);
+}
+
+body {
+    background-color: #F7F9FB;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #4C5C68;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+}
+
+.buttonCard {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+.buttonCard button:first-child {
+    color: white;
+    background-color: #FF8A80;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(34, 108, 82, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    justify-content: center;
+}
+
+.buttonCard button:first-child:hover {
+    background-color: #FF6B6B;
+    box-shadow: 0px 6px 12px rgba(34, 108, 82, 0.4);
+    transform: translateY(-2px);
+}
+
+.buttonCard button:first-child:active {
+    transform: translateY(0);
+}
+
+.buttonCard button:last-child {
+    color: white;
+    background-color: #64B5F6;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 123, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+    justify-content: center;
+}
+
+.buttonCard button:last-child:hover {
+    background-color: #42A5F5;
+    box-shadow: 0px 6px 12px rgba(0, 123, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.buttonCard button:last-child:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .contentPopUp {
+        width: 80vw;
+    }
+    
+    .buttonCard {
+        flex-direction: column;
+    }
+}
+
+.errorMsg {
+    color: #E57373;
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0.2rem;
+    margin-bottom: 0.3rem;
+    padding-left: 0.25rem;
+    display: block;
+    word-break: break-word;
+}
+
+.errorMsg::before {
+    content: "⚠ ";
+    font-size: 0.85rem;
+}
