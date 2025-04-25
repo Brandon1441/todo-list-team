@@ -2,39 +2,25 @@
   "backlog": {
     "tareas": [
       {
-        "id": "cac8",
-        "titulo": "Crear repositorio GitLab",
-        "descripcion": "Se debe crear el repositorio",
+        "id": "2025-04-25T18:33:48.806Z",
         "estado": "pendiente",
-        "fechaLimite": "2025-04-06"
+        "nombre": "asdasd",
+        "descripcion": "asdasdasdasdasda",
+        "fechaCierre": "2025-04-25"
       },
       {
-        "id": "bef7",
-        "titulo": "Comunicarse con el cliente",
-        "descripcion": "Se debe llamar al cliente 1020 por whatsApp",
+        "id": "2025-04-25T18:34:01.613Z",
         "estado": "pendiente",
-        "fechaLimite": "2025-04-15"
+        "nombre": "qqqqq",
+        "descripcion": "qqqqqqqqqqq",
+        "fechaCierre": "2025-04-25"
       },
       {
-        "id": "1384",
-        "titulo": "Realizar entrega de login",
-        "descripcion": "Se debe entregar la página con un logín",
+        "id": "2025-04-25T18:37:34.060Z",
         "estado": "pendiente",
-        "fechaLimite": "2025-04-16"
-      },
-      {
-        "id": "d52e",
-        "titulo": "Realizar ABM ventas",
-        "descripcion": "Se debe realizar un ABM con todos los requisitos del cliente",
-        "estado": "en_progreso",
-        "fechaLimite": "2025-05-09"
-      },
-      {
-        "id": "ba61",
-        "titulo": "Entrega de ABM con Login",
-        "descripcion": "Se debe realizar la entrega al cliente de ABM con login funcional",
-        "estado": "en_progreso",
-        "fechaLimite": "2025-05-10"
+        "nombre": "YUP32311",
+        "descripcion": "Haciendo implementacion jh",
+        "fechaCierre": "2025-04-24"
       }
     ]
   },
@@ -42,16 +28,61 @@
     "sprints": [
       {
         "id": "b0e3f34b-68c6-49eb-b059-ab251ed81629",
-        "fechaInicio": "2025-03-04",
+        "fechaInicio": "2025-03-05",
         "fechaCierre": "2025-03-11",
-        "nombre": "Sprint 122",
+        "nombre": "Sprint I",
         "tareas": [
           {
-            "id": "50699dec-3d1a-45ff-a94d-82d416eac053",
-            "titulo": "Tarea 2",
-            "descripcion": "Estamos aca",
+            "id": "m9k1zsh7ofrvmnegnbe",
+            "nombre": "Tarea5",
+            "descripcion": "Esta es una tarea",
+            "fechaCierre": "2025-04-25",
+            "estado": "en progreso"
+          },
+          {
+            "id": "m9k2gvem026hlmpuib47",
+            "nombre": "TArea Definitiva",
+            "descripcion": "TATATATATa",
+            "fechaCierre": "2025-04-26",
+            "estado": "completada"
+          },
+          {
+            "id": "dcec0ad4-31e0-4279-8ccf-72bd1f20b52d",
+            "titulo": "Tarea backlog 1",
+            "descripcion": "tarea backlog",
+            "estado": "completada",
+            "fechaLimite": "2025-03-05",
+            "nombre": "JAmonn",
+            "fechaCierre": "2025-04-12"
+          },
+          {
+            "id": "2025-04-25T17:04:47.676Z",
             "estado": "pendiente",
-            "fechaLimite": "2025-03-06"
+            "nombre": "Este es un ejemplo",
+            "descripcion": "12345678945321",
+            "fechaCierre": "2025-04-25"
+          },
+          {
+            "id": "2025-04-24T15:13:08.407Z",
+            "estado": "pendiente",
+            "nombre": "kkkkkkkkkk",
+            "descripcion": "kkkkkkkkkk",
+            "fechaCierre": "2025-05-04"
+          }
+        ]
+      },
+      {
+        "id": "m9vya26rt4skg1ew0b7",
+        "nombre": "Subir Video Final",
+        "fechaInicio": "2025-04-08",
+        "fechaCierre": "2025-05-08",
+        "tareas": [
+          {
+            "id": "2025-04-25T01:02:10.601Z",
+            "estado": "en progreso",
+            "nombre": "Tarea Video Final",
+            "descripcion": "Subo el video a youtube",
+            "fechaCierre": "2025-04-21"
           }
         ]
       }

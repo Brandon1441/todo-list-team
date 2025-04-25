@@ -1,0 +1,27 @@
+.mainContainer {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  background: #f9f9f9;
+}
+
+.contentContainer {
+  flex: 1;
+  padding: 20px;
+}
+
+.backButton {
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background: #a3c4f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.backButton:hover {
+  background: #7da8e8;
+}
